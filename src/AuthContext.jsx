@@ -8,7 +8,26 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState();
   const [location, setLocation] = useState("GATE");
 
-  // TODO: signup
+  /* sign up function will be used to POST username to DB
+  */
+
+async function signUp(name) {
+    try {
+      const response = await fetch("https://fsa-jwt-practice.herokuapp.com/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username: name, password: "superSecret99%"})
+      })
+
+    const result = await response.json()
+    setToken(result.token)
+    setLocation("TABLET")
+}  catch(e) {
+    console.error(e)
+}
+
+}
+
 
   // TODO: authenticate
 

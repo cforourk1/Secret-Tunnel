@@ -4,9 +4,12 @@ const API = "https://fsa-jwt-practice.herokuapp.com";
 
 const AuthContext = createContext();
 
+
+
 export function AuthProvider({ children }) {
   const [token, setToken] = useState();
   const [location, setLocation] = useState("GATE");
+  const [error, setError] = useState(null)
 
   /* sign up function will be used to POST username to DB
   */
@@ -25,6 +28,7 @@ async function signUp(name) {
     setLocation("TABLET")
 }  catch(e) {
     console.error(e)
+    setError(e.message)
 }
 
 }
@@ -41,11 +45,12 @@ async function authenticate() {
     setLocation("TUNNEL")
 }  catch(e) {
     console.error(e)
+    setError(e.message)
 }
 
 }
 
-/* => means function body () takes no arguments. storedToken will hold my token. set the token so react can use it. By setting location to tablet - we skiip the welcome screen - user has already signed up. 
+/* => means function body () takes no arguments. storedToken will hold my token. set the token so react can use it. By setting location to tablet - we skiip the welcome screen - user has already signed up.
 */
 useEffect(() => {
   const storedToken = sessionStorage.getItem("token")
@@ -55,7 +60,7 @@ useEffect(() => {
   }
 }, [])
 
-  const value = { location, signUp, authenticate };
+  const value = { location, signUp, authenticate, error };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

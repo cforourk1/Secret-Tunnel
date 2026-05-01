@@ -31,7 +31,7 @@ async function signUp(name) {
 
   // TODO: authenticate
 
-  const value = { location };
+  const value = { location, signUp };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

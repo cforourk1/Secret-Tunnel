@@ -10,3 +10,27 @@ label {
 }
 
 
+
+
+
+
+/*.  this will be used to move my badger from the back of the screen to the front ease-out forwards means the apporach will be slower. Forwards means it will stay in the position it ends up in . this will be the animation for the badgers  */
+@keyframes badgerBlock {
+  from{
+    transform: translateX(-100%) scale(.5);
+    opacity: 0;
+  }
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+
+    }
+}
+
+
+
+.badger {
+
+  animation: badgerBlock 2s ease-out forwards;
+
+}

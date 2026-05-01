@@ -1,6 +1,11 @@
 /** Users can enter their name to receive a token from the API. */
+import { useState } from "react";
 import { useAuth } from "./AuthContext";
 export default function Entrance() {
+
+//adding phases to accomodate for my CSS I want to try
+const [phase, setPhase] = useState("STORY")
+
 
 const { signUp, error, setError } = useAuth()
 /*form data always comes back as a string. even if a user entered a number. in the gamecontext of the example they showed +formData.get("max") because max(variable) was an integer it needs to be converted. +formData is shorhand for saying this field is a number.
@@ -9,7 +14,8 @@ const handleSubmit = (formData) => {
   const name = formData.get("name");
   if(!name){
     setError("Please enter a name")
-    }  return
+    return
+  }
   signUp(name);
 };
 
@@ -38,5 +44,4 @@ const handleSubmit = (formData) => {
       </form>
     </>
   );
-}
 }

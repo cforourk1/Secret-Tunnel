@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const API = "https://fsa-jwt-practice.herokuapp.com";
 
@@ -21,6 +21,7 @@ async function signUp(name) {
 
     const result = await response.json()
     setToken(result.token)
+    sessionStorage.setItem("token", result.token)
     setLocation("TABLET")
 }  catch(e) {
     console.error(e)
@@ -28,7 +29,7 @@ async function signUp(name) {
 
 }
 
-//auth function to API get the token we set earlier for the user 
+//auth function to API get the token we set earlier for the user
 async function authenticate() {
     try {
       const response = await fetch("https://fsa-jwt-practice.herokuapp.com/authenticate", {
@@ -43,6 +44,16 @@ async function authenticate() {
 }
 
 }
+
+/* => means function body () takes no arguments. storedToken will hold my token. set the token so react can use it. By setting location to tablet - we skiip the welcome screen - user has already signed up. 
+*/
+useEffect(() => {
+  const storedToken = sessionStorage.getItem("token")
+  if (storedToken) {
+    setToken(storedToken)
+    setLocation("TABLET")
+  }
+}, [])
 
   const value = { location, signUp, authenticate };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

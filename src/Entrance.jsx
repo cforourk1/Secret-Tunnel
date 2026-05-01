@@ -2,11 +2,14 @@
 import { useAuth } from "./AuthContext";
 export default function Entrance() {
 
-const { signUp, error } = useAuth()
+const { signUp, error, setError } = useAuth()
 /*form data always comes back as a string. even if a user entered a number. in the gamecontext of the example they showed +formData.get("max") because max(variable) was an integer it needs to be converted. +formData is shorhand for saying this field is a number.
 */
 const handleSubmit = (formData) => {
   const name = formData.get("name");
+  if(!name){
+    setError("Please enter a name")
+    }  return
   signUp(name);
 };
 
@@ -35,4 +38,5 @@ const handleSubmit = (formData) => {
       </form>
     </>
   );
+}
 }

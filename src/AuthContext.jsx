@@ -60,7 +60,7 @@ useEffect(() => {
   }
 }, [])
 
-  const value = { location, signUp, authenticate, error };
+  const value = { location, signUp, authenticate, error, setError };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

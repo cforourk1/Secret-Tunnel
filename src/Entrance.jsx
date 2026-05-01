@@ -24,7 +24,8 @@ const handleSubmit = (formData) => {
         fixed on you. The one on the left opens its mouth, and with a deep,
         rumbling voice, it asks, "Who approaches? Speak your name."
       </p>
-      <form>
+{/* form action handleSubmit is what calls the function that will pass the data from the form back up to the API  */}
+      <form action={handleSubmit}>
         <label>
           Name
           <input name="name" />

@@ -1,22 +1,33 @@
+import { useAuth } from "./AuthContext";
+
+
+
 /** Button that attempts to use the token in context when clicked */
 export default function Tablet() {
-  // TODO: call authenticate when form is submitted
+/** Users can enter their name to receive a token from the API. */
 
+const { authenticate } = useAuth()
+/*form data always comes back as a string. even if a user entered a number. in the gamecontext of the example they showed +formData.get("max") because max(variable) was an integer it needs to be converted. +formData is shorhand for saying this field is a number.
+*/
+const handleSubmit = () => {
+  authenticate();
+};
+/*In JSX you can't use regular " quotes directly in text — you need to use &quot; or curly braces with a string
+*/
   return (
     <section>
       <p>
         The sound of your name thuds against the gate as the two badgers furrow
         their brows. The badger on the right beckons you to approach.
       </p>
-      <p>"Only those who are pure of heart may pass."</p>
+      <p>{"Only those who are pure of heart may pass."}</p>
       <p>
-        "Place your hand upon this stone tablet, and thus will your true self be
-        revealed."
+        {"Place your hand upon this stone tablet, and thus will your true self be revealed."}
       </p>
       <p>
         It holds out a rectangular stone tablet carved with an intricate design.
       </p>
-      <form>
+      <form action={handleSubmit}>
         <button>Place your palm upon the tablet.</button>
       </form>
     </section>

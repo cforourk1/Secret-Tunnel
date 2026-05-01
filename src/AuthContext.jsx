@@ -28,10 +28,23 @@ async function signUp(name) {
 
 }
 
+//auth function to API get the token we set earlier for the user 
+async function authenticate() {
+    try {
+      const response = await fetch("https://fsa-jwt-practice.herokuapp.com/authenticate", {
+      method: "GET",
+      headers: { "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`}
+      })
+   await response.json()
+    setLocation("TUNNEL")
+}  catch(e) {
+    console.error(e)
+}
 
-  // TODO: authenticate
+}
 
-  const value = { location, signUp };
+  const value = { location, signUp, authenticate };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
@@ -40,3 +53,5 @@ export function useAuth() {
   if (!context) throw Error("useAuth must be used within an AuthProvider");
   return context;
 }
+
+

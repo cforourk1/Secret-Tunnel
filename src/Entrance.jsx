@@ -47,7 +47,7 @@ const handleSubmit = (formData) => {
     </div>
     )}
     { phase === "NAMEINPUT" && (
-    <div className="nameInput">
+    <div className="scrollInput">
 {/* form action handleSubmit is what calls the function that will pass the data from the form back up to the API  */}
       <form action={handleSubmit}>
         <label>

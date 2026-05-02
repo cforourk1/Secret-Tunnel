@@ -14,6 +14,7 @@ body {
     background-image: url("/cave.jpeg");
     background-size: cover;
     background-position: center;
+    position: relative;
     min-height: 100vh;
 }
 
@@ -24,6 +25,7 @@ body {
   flex-direction: column;
   align-items: center;
   max-width: 600px;
+  min-height: 100vh;
   margin: 0 auto;
 }
 
@@ -127,7 +129,10 @@ button:hover {
 .badgerBlock1 {
 
   animation: badgerBlock1 2s ease-out forwards;
-  width: 200px;
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 450px;
   height: auto;
 
 }
@@ -137,7 +142,10 @@ button:hover {
 .badgerBlock2 {
 
 animation: badgerBlock2 1.5s ease-out forwards;
-  width: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 15%;
+  width: 450px;
   height: auto;
 
 }
@@ -149,5 +157,29 @@ animation: badgerBlock2 1.5s ease-out forwards;
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+}
+
+
+
+/*styling to add scroll for name input */
+
+.scrollInput {
+  background-image: url("/scroll.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+}
+
+/* styling to add stone tablet for authentication */
+
+.tabletAuth {
+
+  background-image: url("/tablet.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
 
 }

@@ -15,7 +15,7 @@ const handleSubmit = () => {
 /*In JSX you can't use regular " quotes directly in text — you need to use &quot; or curly braces with a string
 */
   return (
-    <section>
+    <div className="heartCheck">
       <p>
         The sound of your name thuds against the gate as the two badgers furrow
         their brows. The badger on the right beckons you to approach.
@@ -24,12 +24,13 @@ const handleSubmit = () => {
       <p>
         {"Place your hand upon this stone tablet, and thus will your true self be revealed."}
       </p>
+      <button onClick={() => setPhase("TABLET")}>Continue to place your hand...</button>
       <p>
         It holds out a rectangular stone tablet carved with an intricate design.
       </p>
       <form action={handleSubmit}>
         <button>Place your palm upon the tablet.</button>
       </form>
-    </section>
+    </div>
   );
 }

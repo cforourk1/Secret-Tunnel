@@ -25,25 +25,17 @@ const [phase, setPhase] = useState("HEARTCHECK");
   </div>
 { phase === "HEARTCHECK" && (
     <div className="heartCheck">
-      <p>
-        The sound of your name thuds against the gate as the two badgers furrow
-        their brows. The badger on the right beckons you to approach.
-      </p>
-      <p>{"Only those who are pure of heart may pass."}</p>
-      <button onClick={() => setPhase("TABLETAUTH")}>Continue to place your hand...</button>
+      <p> The sound of your name thuds against the gate as the two badgers furrow
+        their brows. The badger on the right beckons you to approach. </p>
+      <p>{"Only those who are pure of heart may pass. Place your hand upon this stone tablet, and thus will your true self be revealed."} It holds out a rectangular stone tablet carved with an intricate design.</p>
+      <button className="hand" onClick={() => setPhase("TABLETAUTH")}>Continue...</button>
     </div>
     )},
 
 { phase === "TABLETAUTH" && (
     <div className="tabletAuth">
-      <p>
-        {"Place your hand upon this stone tablet, and thus will your true self be revealed."}
-      </p>
-      <p>
-        It holds out a rectangular stone tablet carved with an intricate design.
-      </p>
       <form action={handleSubmit}>
-        <button>Place your palm upon the tablet.</button>
+        <button className="auth">Place your palm upon the tablet.</button>
       </form>
     </div>
 )}

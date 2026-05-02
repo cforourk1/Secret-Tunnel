@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useAuth } from "./AuthContext";
 export default function Entrance() {
 
-//adding phases to accomodate for my CSS I want to try
+/*adding phases to accomodate for my CSS I want to try. I am breaking it apart to try some CSS animations with the images I found of some badgers - because badgers are f'n cool, Mark. My onclick buttons to continue the story update my PHASE. my && operators are doing the work for me to determine what to show.
+*/
 const [phase, setPhase] = useState("STORY")
 
 
@@ -21,27 +22,38 @@ const handleSubmit = (formData) => {
 
 
   return (
-        <>
+    <>
     {error && <p>{error}</p>}
+    {/*.         */}
+    { phase === "STORY" && (
+    <div>
       <h1>Cave Entrance</h1>
       <p>Your journey has brought you to the base of a rocky mountain.</p>
       <p>
-        The quickest path forward is through the mountain's winding tunnels, but
-        a sturdy metal gate sits closed before you.
-      </p>
-      <p>
-        Two giant badgers stand guard on either side of the gate, their eyes
-        fixed on you. The one on the left opens its mouth, and with a deep,
-        rumbling voice, it asks, "Who approaches? Speak your name."
-      </p>
+      {"The quickest path forward is through the mountain's winding tunnels, but a sturdy metal gate sits closed before you." }</p>
+        <button onClick={() => setPhase("BADGERSPEAK")}>Continue...</button>
+    </div>
+    )}
+    { phase === "BADGERSPEAK" && (
+    <div>
+      <p>Two giant badgers stand guard on either side of the gate, their eyes fixed on you. The one on the left opens its mouth, and with a deep,rumbling voice, it asks, {"Who approaches? Speak your name."}</p>
+       <button onClick={() => setPhase("NAMEINPUT")}>Continue...</button>
+      </div>
+    )}
+    { phase === "NAMEINPUT" && (
+    <div>
 {/* form action handleSubmit is what calls the function that will pass the data from the form back up to the API  */}
       <form action={handleSubmit}>
         <label>
-          Name
+          Enter your name
           <input name="name" />
         </label>
         <button>Respond</button>
       </form>
-    </>
-  );
-}
+    </div>
+    )}
+  </>
+    )
+  }
+
+

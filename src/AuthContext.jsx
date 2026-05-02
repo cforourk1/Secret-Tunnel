@@ -10,7 +10,7 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState();
   const [location, setLocation] = useState("GATE");
   const [error, setError] = useState(null)
-   const [phase, setPhase] = useState("");
+  const [phase, setPhase] = useState("");
 
   /* sign up function will be used to POST username to DB
   */

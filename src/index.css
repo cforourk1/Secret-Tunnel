@@ -126,7 +126,7 @@ button:hover {
 
 .badgerBlock1 {
 
-  animation: badgerBlock 2s ease-out forwards;
+  animation: badgerBlock1 2s ease-out forwards;
   width: 200px;
   height: auto;
 
@@ -136,8 +136,18 @@ button:hover {
 
 .badgerBlock2 {
 
-animation: badgerBlock 1.5s ease-out forwards;
+animation: badgerBlock2 1.5s ease-out forwards;
   width: 200px;
   height: auto;
+
+}
+
+/* separation of state and badgers */
+
+
+.badgerRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 
 }

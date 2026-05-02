@@ -6,6 +6,9 @@
 form,
 label {
   display: grid;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.3rem;
+  text-align: center;
   gap: 0.25rem;
 }
 
@@ -69,18 +72,26 @@ body {
   padding: .75rem;
 }
 
+
 /* styling for the input field */
-input {
+.scrollInput input {
     background-color: rgba(207, 168, 52, 0.574);
     box-shadow: #1a3a0f;
     min-height: 1.5rem;
-    width: 98%;
-    padding: 0.3rem;
+    padding-right: 5%;
+    margin-left: 20%;
+    width: 50%;
     font-size: 1rem;
     border-radius: 0.5rem;
 }
 
-/* styling for the buttons */
+/*to make enter your name section black */
+.scrollInput label {
+  color: black;
+
+}
+
+/* styling for the buttons
 button {
     background-color: #2d5a1b;
     color: white;
@@ -91,12 +102,25 @@ button {
     cursor: pointer;
 }
 
+
 button:hover {
     background-color: #1a3a0f;
 }
+*/
 
-
-
+/* button styling for name input section */
+.respond {
+    background-color: #2d5a1b;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    border: none;
+    padding: 0.60rem 1rem;
+    margin-left: 25%;
+    margin-right: 28%;
+    border-radius: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
 
 
 /*.  this will be used to move my badger from the back of the screen to the front ease-out forwards means the apporach will be slower. Forwards means it will stay in the position it ends up in . this will be the animation for the badgers  */
@@ -170,6 +194,12 @@ animation: badgerBlock2 1.5s ease-out forwards;
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
+  padding-top: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+  left: 5%;
+  width: 400px;
+  height: 300px;
 }
 
 /* styling to add stone tablet for authentication */
@@ -181,5 +211,27 @@ animation: badgerBlock2 1.5s ease-out forwards;
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
+  padding-top: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+  left: 5%;
+  width: 400px;
+  height: 300px;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}
 
+
+
+
+/* styling for the authentication tablet text */
+.heartCheck {
+    background-color: rgba(207, 168, 52, 0.574);
+    box-shadow: #1a3a0f;
+    min-height: 1.5rem;
+    padding-right: 5%;
+    margin-left: 20%;
+    width: 50%;
+    font-size: 1rem;
+    border-radius: 0.5rem;
 }

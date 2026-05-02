@@ -1,5 +1,6 @@
 import { useAuth } from "./AuthContext";
 
+import { useState } from "react";
 
 
 /** Button that attempts to use the token in context when clicked */
@@ -14,17 +15,30 @@ const handleSubmit = () => {
 };
 /*In JSX you can't use regular " quotes directly in text — you need to use &quot; or curly braces with a string
 */
+const [phase, setPhase] = useState("HEARTCHECK");
   return (
+<>
+
+  <div className="badgerRow">
+    <img className="badgerBlock1" src="/badger1.png" alt="badger" />
+    <img className="badgerBlock2" src="/badger2.png" alt="badger" />
+  </div>
+{ phase === "HEARTCHECK" && (
     <div className="heartCheck">
       <p>
         The sound of your name thuds against the gate as the two badgers furrow
         their brows. The badger on the right beckons you to approach.
       </p>
       <p>{"Only those who are pure of heart may pass."}</p>
+      <button onClick={() => setPhase("TABLETAUTH")}>Continue to place your hand...</button>
+    </div>
+    )},
+
+{ phase === "TABLETAUTH" && (
+    <div className="tabletAuth">
       <p>
         {"Place your hand upon this stone tablet, and thus will your true self be revealed."}
       </p>
-      <button onClick={() => setPhase("TABLET")}>Continue to place your hand...</button>
       <p>
         It holds out a rectangular stone tablet carved with an intricate design.
       </p>
@@ -32,5 +46,7 @@ const handleSubmit = () => {
         <button>Place your palm upon the tablet.</button>
       </form>
     </div>
+)}
+    </>
   );
 }

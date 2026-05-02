@@ -25,6 +25,10 @@ const handleSubmit = (formData) => {
     <div className="container">
     {error && <p>{error}</p>}
     {/*.         */}
+    <div className="badgerRow">
+    <img className="badgerBlock1" src="/badger1.png" alt="badger" />
+    <img className="badgerBlock2" src="/badger2.png" alt="badger" />
+  </div>
     { phase === "STORY" && (
     <div className="storyText">
       <h1>Cave Entrance</h1>
@@ -35,26 +39,20 @@ const handleSubmit = (formData) => {
     </div>
     )}
     { phase === "BADGERSPEAK" && (
-  <div>
-    <div className="badgerRow">
-    <img className="badgerBlock1" src="/badger1.png" alt="badger" />
-    <img className="badgerBlock2" src="/badger2.png" alt="badger" />
-  </div>
     <div className="badgerText">
       <p>Two giant badgers stand guard on either side of the gate, their eyes fixed on you. The one on the left opens its mouth, and with a deep,rumbling voice, it asks, {"Who approaches? Speak your name."}</p>
        <button onClick={() => setPhase("NAMEINPUT")}>Continue...</button>
       </div>
-    </div>
     )}
     { phase === "NAMEINPUT" && (
     <div className="scrollInput">
 {/* form action handleSubmit is what calls the function that will pass the data from the form back up to the API  */}
       <form action={handleSubmit}>
         <label>
-          Enter your name
+          Enter your name:
           <input name="name" />
         </label>
-        <button>Respond</button>
+        <button className="respond">Respond</button>
       </form>
     </div>
     )}

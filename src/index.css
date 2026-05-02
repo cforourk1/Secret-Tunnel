@@ -98,7 +98,7 @@ button:hover {
 
 
 /*.  this will be used to move my badger from the back of the screen to the front ease-out forwards means the apporach will be slower. Forwards means it will stay in the position it ends up in . this will be the animation for the badgers  */
-@keyframes badgerBlock {
+@keyframes badgerBlock1 {
   from{
     transform: translateX(-100%) scale(.5);
     opacity: 0;
@@ -110,19 +110,34 @@ button:hover {
     }
 }
 
+@keyframes badgerBlock2 {
+  from{
+    transform: translateX(100%) scale(.5);
+    opacity: 0;
+  }
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
 
+    }
+}
 
-.badger1 {
+/*animation & style for badger 1*/
+
+.badgerBlock1 {
 
   animation: badgerBlock 2s ease-out forwards;
+  width: 200px;
+  height: auto;
 
 }
 
+/*animation & style for badger 2*/
 
-
-.badger2 {
+.badgerBlock2 {
 
 animation: badgerBlock 1.5s ease-out forwards;
-
+  width: 200px;
+  height: auto;
 
 }

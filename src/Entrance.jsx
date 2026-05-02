@@ -36,8 +36,10 @@ const handleSubmit = (formData) => {
     )}
     { phase === "BADGERSPEAK" && (
     <div className="badgerText">
-      <img className="badger1" src="/badger1.png" alt="badger" />
-      <img className="badger2" src="/badger2.png" alt="badger" />
+    <div className="badgerRow">
+    <img className="badger1" src="/badger1.png" alt="badger" />
+    <img className="badger2" src="/badger2.png" alt="badger" />
+    </div>
       <p>Two giant badgers stand guard on either side of the gate, their eyes fixed on you. The one on the left opens its mouth, and with a deep,rumbling voice, it asks, {"Who approaches? Speak your name."}</p>
        <button onClick={() => setPhase("NAMEINPUT")}>Continue...</button>
       </div>

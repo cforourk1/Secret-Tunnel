@@ -20,11 +20,9 @@ body {
 /*center the text and contain on screen */
 
 .container {
-  display: felx;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -35,7 +33,7 @@ body {
 .storyText {
   background-color: rgba(0, 0, 0, .6);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   color: white;
   padding: 1rem;
@@ -47,7 +45,7 @@ body {
 .badgerText {
   background-color: rgba(0, 0, 0, .6);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   color: white;
   padding: 1rem;
@@ -58,13 +56,26 @@ body {
 .nameInput {
   background-color: rgba(0, 0, 0, .6);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   color: white;
   padding: 1rem;
   border-radius: .5rem;
+  min-height: 3rem;
+  max-width: 400px;
   width: 100%;
   padding: .75rem;
+}
+
+/* styling for the input field */
+input {
+    background-color: rgba(207, 168, 52, 0.574);
+    box-shadow: #1a3a0f;
+    min-height: 1.5rem;
+    width: 98%;
+    padding: 0.3rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
 }
 
 /* styling for the buttons */

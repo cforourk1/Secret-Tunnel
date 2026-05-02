@@ -1,5 +1,5 @@
 #root {
-  width: 35ch;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -8,6 +8,54 @@ label {
   display: grid;
   gap: 0.25rem;
 }
+
+/* styling for the background image and main body */
+body {
+    background-image: url("/cave.jpeg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+/*center the text and contain on screen */
+
+.container {
+  display: felx;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+/* styling for the story phase beginning section */
+
+.storyText {
+  background-color: rgba(0, 0, 0, .6);
+  color: white;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+/* styling for the badger speaking phase */
+
+.badgerText {
+  background-color: rgba(0, 0, 0, .6);
+  color: white;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+/* styling for the name input phase */
+.nameInput {
+  background-color: rgba(0, 0, 0, .6);
+  color: white;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
 
 
 
@@ -29,8 +77,17 @@ label {
 
 
 
-.badger {
+.badger1 {
 
   animation: badgerBlock 2s ease-out forwards;
+
+}
+
+
+
+.badger2 {
+
+animation: badgerBlock 1.5s ease-out forwards;
+
 
 }

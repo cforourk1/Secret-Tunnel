@@ -22,11 +22,11 @@ const handleSubmit = (formData) => {
 
 
   return (
-    <>
+    <div className="container">
     {error && <p>{error}</p>}
     {/*.         */}
     { phase === "STORY" && (
-    <div>
+    <div className="storyText">
       <h1>Cave Entrance</h1>
       <p>Your journey has brought you to the base of a rocky mountain.</p>
       <p>
@@ -35,13 +35,13 @@ const handleSubmit = (formData) => {
     </div>
     )}
     { phase === "BADGERSPEAK" && (
-    <div>
+    <div className="badgerText">
       <p>Two giant badgers stand guard on either side of the gate, their eyes fixed on you. The one on the left opens its mouth, and with a deep,rumbling voice, it asks, {"Who approaches? Speak your name."}</p>
        <button onClick={() => setPhase("NAMEINPUT")}>Continue...</button>
       </div>
     )}
     { phase === "NAMEINPUT" && (
-    <div>
+    <div className="nameInput">
 {/* form action handleSubmit is what calls the function that will pass the data from the form back up to the API  */}
       <form action={handleSubmit}>
         <label>
@@ -52,7 +52,7 @@ const handleSubmit = (formData) => {
       </form>
     </div>
     )}
-  </>
+  </div>
     )
   }
 

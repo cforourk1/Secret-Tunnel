@@ -34,26 +34,37 @@ body {
 
 .storyText {
   background-color: rgba(0, 0, 0, .6);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  text-align: center;
   color: white;
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 1rem;
 }
 
 /* styling for the badger speaking phase */
 
 .badgerText {
   background-color: rgba(0, 0, 0, .6);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  text-align: center;
   color: white;
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 1rem;
 }
 
 /* styling for the name input phase */
 .nameInput {
   background-color: rgba(0, 0, 0, .6);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  text-align: center;
   color: white;
   padding: 1rem;
   border-radius: .5rem;
+  width: auto;
+  padding: .5rem;
 }
 
 
